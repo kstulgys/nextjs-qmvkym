@@ -6,7 +6,7 @@ import Insta from 'scraper-instagram';
 export default function Home() {
   React.useEffect(() => {
     const InstaClient = new Insta();
-    InstaClient.getProfileStory(username)
+    InstaClient.getProfileStory('karolis_stulgys')
       .then(profile => console.log(profile))
       .catch(err => console.error(err));
   }, []);
