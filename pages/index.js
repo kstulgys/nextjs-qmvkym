@@ -1,7 +1,14 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import Insta from 'scraper-instagram';
 
 export default function Home() {
+  React.useEffect(() => {
+    const InstaClient = new Insta();
+    InstaClient.getProfileStory(username)
+      .then(profile => console.log(profile))
+      .catch(err => console.error(err));
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
